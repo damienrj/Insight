@@ -47,7 +47,7 @@ def post():
         pass_prob = int(100*result.pass_odds[0])
         if pass_prob > 70:
             thumb = 0
-            color = 'black'
+            color = 'seagreen'
         elif fail_prob > 70:
             thumb = 180
             color = 'red'
