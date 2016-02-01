@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Restaurant Roulette</title>
+
+    <!-- Bootstrap Core CSS -->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/jquery.typeahead.css">
+    <!-- Custom CSS -->
+    <link href="../static/css/stylish-portfolio.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script src="../static/js/jquery.typeahead.js"></script>
+
+</head>
+
+<body>
+
+
+
+  <!-- Navigation -->
+  <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+  <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+          <li class="sidebar-brand">
+              <a href="/"  onclick = $("#menu-close").click(); >Home</a>
+          </li>
+          <li>
+              <a href="https://www.linkedin.com/in/damienrj" onclick = $("#menu-close").click(); > LinkedIn </a>
+          </li>
+          <li>
+              <a href="https://github.com/damienrj/" onclick = $("#menu-close").click(); > Github </a>
+          </li>
+
+      </ul>
+  </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+          <div style="background-color: #D3D3D3; padding-bottom: 8px; ">
+            <h1>Restaurant Roulette</h1>
+            <h3>Will the restaurant pass its health inspection?</h3>
+
+          </div>
+            <form id="form-country_v1" name="form-country_v1">
+            <div class="typeahead-container">
+                <div class="typeahead-field">
+
+                    <span class="typeahead-query">
+                        <input ;" name = "name" type="" id="country_v1-query"
+                         name="country_v1[query]" type="search"
+                        placeholder="Search" autocomplete="off">
+                    </span>
+                    <span class="typeahead-button">
+                        <button action =/app type="submit">
+                            <i class="typeahead-search-icon"></i>
+                        </button>
+                    </span>
+
+                </div>
+            </div>
+            </form>
+
+            <span class="fa-stack fa-5x {{thumb|safe}}" style = "color: {{color|safe}};">
+              <i class="fa fa-cog fa-stack-2x fa-inverse"></i>
+              <i class="fa fa-circle fa-stack-1x fa-inverse"></i>
+              <i class="fa fa-thumbs-o-up fa-stack-1x"></i>
+
+            </span>
+            <br>
+            <div style="color:black; display: inline-block; background-color: #D3D3D3; padding: 10px; border:2px solid black;">
+                <h2 > {{ restaurant | safe }} </h2>
+                <h3 > {{ details | safe }} </h3>
+            </div>
+
+
+
+
+        </div>
+
+
+    </header>
+
+
+
+
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+    <script src="../static/js/RR.js"> </script>
+
+</body>
+
+</html>
